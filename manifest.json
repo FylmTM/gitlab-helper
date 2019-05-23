@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Gitlab Helper",
+  "version": "0.1.0",
+  "description": "Gitlab Improvements",
+  "icons": {
+    "48": "icons/helper-48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://gitlab.com/*"
+      ],
+      "js": [
+        "gitlab-helper.js"
+      ]
+    }
+  ]
+}
