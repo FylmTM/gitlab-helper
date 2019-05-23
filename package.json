@@ -1,6 +1,6 @@
 {
   "name": "gitlab-helper",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
   "main": "gitlab-helper.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "postbuild": "npm run sign",
     "build": "web-ext build",
     "sign": "web-ext sign --api-key=$AMO_JWT_ISSUER --api-secret=$AMO_JWT_SECRET",
-    "lint": "web-ext lint"
+    "lint": "web-ext lint",
+    "start": "web-ext run"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,9 @@
       "package.json",
       "package-lock.json",
       "icons/helper-512.png"
-    ]
+    ],
+    "run": {
+      "firefox": "firefox-developer-edition"
+    }
   }
 }
