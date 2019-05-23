@@ -1,13 +1,14 @@
 {
   "name": "gitlab-helper",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "gitlab-helper.js",
   "scripts": {
     "prebuild": "rm -rf web-ext-artifacts",
     "postbuild": "npm run sign",
-    "build": "web-ext build -i package.json package-lock.json icons/helper-512.png --overwrite-dest",
-    "sign": "web-ext sign --api-key=$AMO_JWT_ISSUER --api-secret=$AMO_JWT_SECRET"
+    "build": "web-ext build",
+    "sign": "web-ext sign --api-key=$AMO_JWT_ISSUER --api-secret=$AMO_JWT_SECRET",
+    "lint": "web-ext lint"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,15 @@
   "homepage": "https://github.com/FylmTM/gitlab-helper#readme",
   "devDependencies": {
     "web-ext": "^3.0.0"
+  },
+  "webExt": {
+    "build": {
+      "overwriteDest": true
+    },
+    "ignoreFiles": [
+      "package.json",
+      "package-lock.json",
+      "icons/helper-512.png"
+    ]
   }
 }
