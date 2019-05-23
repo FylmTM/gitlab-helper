@@ -4,6 +4,8 @@
   "description": "",
   "main": "gitlab-helper.js",
   "scripts": {
+    "prebuild": "rm -rf web-ext-artifacts",
+    "postbuild": "npm run sign",
     "build": "web-ext build -i package.json package-lock.json icons/helper-512.png --overwrite-dest",
     "sign": "web-ext sign --api-key=$AMO_JWT_ISSUER --api-secret=$AMO_JWT_SECRET"
   },
